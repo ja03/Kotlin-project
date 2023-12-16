@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home_page">
+    <LinearLayout android:id="@+id/home_page_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello Ahmad👋"
+            android:textSize="18dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thrilled to Have You Here!"
+            android:textSize="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Ahmad's\nDashboard"
+            android:textColor="@color/black"
+            android:textSize="64dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="152dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="48dp"
+            android:layout_marginRight="22dp"
+            android:background="@drawable/ticket_border"
+            android:gravity="left"
+            android:paddingLeft="12dp"
+            android:paddingTop="12dp"
+            android:text="Tickets"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="32dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/home_page_ly"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp">
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="152dp"
+            android:text="Clients"
+            android:gravity="left"
+            android:textAllCaps="false"
+            android:background="@drawable/client_border"
+            android:paddingLeft="12dp"
+            android:paddingTop="12dp"
+            android:textSize="32dp"
+            android:textColor="@color/white" />
+
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="152dp"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/employees_border"
+            android:gravity="left"
+            android:paddingLeft="12dp"
+            android:paddingTop="12dp"
+            android:text="Employees"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="32dp" />
+    </LinearLayout>
+
+    <ImageView android:id="@+id/new_task_img"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="37dp"
+        android:layout_marginRight="35dp"
+        android:src="@drawable/new_task"/>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/new_task_img"
+        android:layout_marginTop="37dp"
+        android:layout_marginRight="4dp"
+        android:src="@drawable/profile_logo"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

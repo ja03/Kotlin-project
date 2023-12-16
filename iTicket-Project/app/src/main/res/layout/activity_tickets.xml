@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tickets">
+    <TextView android:id="@+id/tk_hd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tickets"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="25dp"
+        android:textSize="18dp"
+        android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/tk_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tk_hd"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="24dp"
+            android:text="10 Opened\nTickets Yet To Be\nClosed"
+            android:textSize="40dp"
+            android:textColor="@color/black"
+            />
+        <LinearLayout android:id="@+id/filter_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tk_no"
+           android:layout_marginRight="50dp"
+            android:background="@drawable/filter_sw_full_border">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textAllCaps="false"
+                android:background="@drawable/filter_sw_border"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/filter_icon"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tk_no"
+        android:layout_marginTop="32dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ticket_info_border">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:gravity="left"
+                    android:text="Add Paymant Feature\n\nOmar Khalid\n\nAhmad Mahmoud"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <TextView android:id="@+id/in_progress01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingTop="10dp"
+                    android:paddingRight="20dp"
+                    android:text="In Progress"
+                    android:textColor="#5B92F0"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/person_icon01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/in_progress01"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/person_icon"
+                    android:paddingRight="21dp"
+                    android:paddingTop="20dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/emp_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/person_icon01"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingRight="22dp"
+                    android:paddingTop="23dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ticket_info_border">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:gravity="left"
+                    android:text="Add Paymant Feature\n\nOmar Khalid\n\nAhmad Mahmoud"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <TextView android:id="@+id/in_progress02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingTop="10dp"
+                    android:paddingRight="20dp"
+                    android:text="In Progress"
+                    android:textColor="#5B92F0"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/person_icon02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/in_progress02"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/person_icon"
+                    android:paddingRight="21dp"
+                    android:paddingTop="20dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/emp_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/person_icon02"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingRight="22dp"
+                    android:paddingTop="23dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ticket_info_border">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:gravity="left"
+                    android:text="Add Paymant Feature\n\nOmar Khalid\n\nAhmad Mahmoud"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <TextView android:id="@+id/in_progress03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingTop="10dp"
+                    android:paddingRight="20dp"
+                    android:text="In Progress"
+                    android:textColor="#5B92F0"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/person_icon03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/in_progress03"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/person_icon"
+                    android:paddingRight="21dp"
+                    android:paddingTop="20dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/emp_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/person_icon03"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingRight="22dp"
+                    android:paddingTop="23dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ticket_info_border">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:gravity="left"
+                    android:text="Add Paymant Feature\n\nOmar Khalid\n\nAhmad Mahmoud"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <TextView android:id="@+id/in_progress04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingTop="10dp"
+                    android:paddingRight="20dp"
+                    android:text="In Progress"
+                    android:textColor="#5B92F0"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/person_icon04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/in_progress04"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/person_icon"
+                    android:paddingRight="21dp"
+                    android:paddingTop="20dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/emp_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/person_icon04"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingRight="22dp"
+                    android:paddingTop="23dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ticket_info_border">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:gravity="left"
+                    android:text="Add Paymant Feature\n\nOmar Khalid\n\nAhmad Mahmoud"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <TextView android:id="@+id/in_progress05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingTop="10dp"
+                    android:paddingRight="20dp"
+                    android:text="In Progress"
+                    android:textColor="#5B92F0"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/person_icon05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/in_progress05"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/person_icon"
+                    android:paddingRight="21dp"
+                    android:paddingTop="20dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/emp_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/person_icon05"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingRight="22dp"
+                    android:paddingTop="23dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ticket_info_border">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:gravity="left"
+                    android:text="Add Paymant Feature\n\nOmar Khalid\n\nAhmad Mahmoud"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <TextView android:id="@+id/in_progress06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingTop="10dp"
+                    android:paddingRight="20dp"
+                    android:text="In Progress"
+                    android:textColor="#5B92F0"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/person_icon06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/in_progress06"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/person_icon"
+                    android:paddingRight="21dp"
+                    android:paddingTop="20dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/emp_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/person_icon06"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingRight="22dp"
+                    android:paddingTop="23dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,50 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to iTicket"
+        android:padding="20dp"
+        android:gravity="center"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:textColor="#143178"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tech Troubles? Smooth Solutions."
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="normal"
+        android:textColor="@color/black"
+        />
+    <Button android:id="@+id/learn_more_btn"
+        android:layout_width="345dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="64dp"
+        android:layout_gravity="center"
+        android:layout_marginVertical="64dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="Learn more"
+        android:textSize="18dp"
+        android:textColor="#060047"
+        android:background="@drawable/learn_more_border"
+        android:textAllCaps="false"
+        />
+
+
+
+
+</LinearLayout>
+
+
+
+
