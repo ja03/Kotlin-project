@@ -6,15 +6,14 @@
     android:layout_gravity="center">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:text="Welcome to iTicket"
-        android:padding="20dp"
         android:gravity="center"
-        android:textSize="36dp"
-        android:textStyle="bold"
+        android:padding="20dp"
+        android:text="Welcome to iTicket"
         android:textColor="#143178"
-        />
+        android:textSize="36dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
@@ -25,20 +24,21 @@
         android:textStyle="normal"
         android:textColor="@color/black"
         />
-    <Button android:id="@+id/learn_more_btn"
-        android:layout_width="345dp"
+
+    <Button
+        android:id="@+id/learn_more_btn"
+        android:layout_width="342dp"
         android:layout_height="46dp"
-        android:layout_marginTop="64dp"
         android:layout_gravity="center"
         android:layout_marginVertical="64dp"
-        android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:text="Learn more"
-        android:textSize="18dp"
-        android:textColor="#060047"
+        android:layout_marginTop="64dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/learn_more_border"
+        android:text="Learn more"
         android:textAllCaps="false"
-        />
+        android:textColor="#060047"
+        android:textSize="18dp" />
 
 
 
