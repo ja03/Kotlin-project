@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Clients"
+    tools:context=".Employees"
     android:paddingBottom="-100dp">
     <TextView android:id="@+id/cl_hd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clients"
+        android:text="Employees"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,15 +27,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="45"
+            android:text="10"
             android:textSize="40dp"
-            android:textColor="#FD443A"
+            android:textColor="#41C09C"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
-            android:text="Happy Clients"
+            android:text="Hard Workers"
             android:textSize="40dp"
             android:textColor="#060047"
             />

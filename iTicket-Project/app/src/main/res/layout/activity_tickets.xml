@@ -15,49 +15,72 @@
         android:layout_marginTop="25dp"
         android:textSize="18dp"
         android:textColor="@color/black" />
+    <LinearLayout
+        android:id="@+id/tk_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tk_hd"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="24dp">
         <TextView
-            android:id="@+id/tk_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tk_hd"
-            android:layout_marginTop="24dp"
-            android:layout_marginLeft="24dp"
-            android:text="10 Opened\nTickets Yet To Be\nClosed"
+            android:text="10 "
+            android:textSize="40dp"
+            android:textColor="#4D4FFA"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opened"
             android:textSize="40dp"
             android:textColor="@color/black"
             />
-        <LinearLayout android:id="@+id/filter_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/tk_no"
-           android:layout_marginRight="50dp"
-            android:background="@drawable/filter_sw_full_border">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Filter"
-                android:textColor="@color/white"
-                android:textSize="16dp"
-                android:textAllCaps="false"
-                android:background="@drawable/filter_sw_border"
-                />
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/filter_icon"
-                android:layout_gravity="center" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tk_no_con"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tk_no"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Tickets Yet To Be\nClosed"
+        android:textSize="40dp"
+        android:layout_marginLeft="28dp"
+        android:textColor="@color/black"/>
 
-        </LinearLayout>
+    <LinearLayout android:id="@+id/filter_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tk_no_con"
+       android:layout_marginRight="50dp"
+        android:background="@drawable/filter_sw_full_border">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:background="@drawable/filter_sw_border"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/filter_icon"
+            android:layout_gravity="center" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tk_no"
+        app:layout_constraintTop_toBottomOf="@id/tk_no_con"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="32dp">
         <LinearLayout
             android:layout_width="match_parent"

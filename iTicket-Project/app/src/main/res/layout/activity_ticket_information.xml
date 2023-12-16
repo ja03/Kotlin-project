@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Ticket_information"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +44,7 @@
             android:paddingTop="3dp"
             android:alpha="0.5"
             />
-        <ImageView
+        <ImageButton
             android:id="@+id/trash_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,8 +53,9 @@
             android:src="@drawable/trash_icon"
             android:paddingRight="21dp"
             android:paddingTop="20dp"
-            app:tint="#060047"/>
-        <ImageView
+            app:tint="#060047"
+            android:backgroundTint="@color/white"/>
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/edit_icon"
@@ -61,6 +63,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:paddingRight="22dp"
             android:paddingTop="23dp"
+            android:backgroundTint="@color/white"
             app:tint="#060047"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
