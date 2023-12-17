@@ -69,7 +69,7 @@
             android:textColor="#053153"
             />
         <Button
-            android:id="@+id/create_pass_link"
+            android:id="@+id/sign_up_link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/forget_create_pass_border"
