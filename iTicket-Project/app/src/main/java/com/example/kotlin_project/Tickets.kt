@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Filter
+import android.widget.ImageButton
 import androidx.constraintlayout.widget.ConstraintLayout
 
 
@@ -22,5 +23,11 @@ class Tickets : AppCompatActivity() {
             val ticketElement = Intent(this, Ticket_information::class.java)
             startActivity(ticketElement)
         }
+        val popBtn = findViewById<ImageButton>(R.id.pop_arrow)
+        popBtn.setOnClickListener{
+            val popBtn = Intent(this, Home_page::class.java)
+            startActivity(popBtn)
+        }
+
     }
 }
