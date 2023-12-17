@@ -87,8 +87,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@string/log_in_link"
-            android:textColorLink="#143178"
+            android:text="log in"
+            android:clickable="true"
+            android:textColor="#143178"
             />
 
 

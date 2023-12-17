@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">Kotlin-Project</string>
-    <string name="forget_password_link"><a href="http://www.google.com">Forget Password?</a></string>
-    <string name="create_account_link"><a href="http://www.google.com">Create one</a></string>
-    <string name="send_code_link"><a href="http://www.google.com">Send it again</a></string>
-    <string name="log_in_link"><a href="http://www.google.com">Log in</a></string>
     <string-array name="sort_items">
         <item>Sort client by</item>
         <item>A-Z</item>

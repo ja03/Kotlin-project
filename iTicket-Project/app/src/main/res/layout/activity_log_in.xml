@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Log_in">
+    tools:context=".Log_in"
+    android:background="@color/white">
     <LinearLayout
         android:id="@+id/linear_ly"
         android:layout_width="wrap_content"
@@ -57,43 +58,28 @@
             android:textColor="#143178"
             android:textAllCaps="false"
             />
-        <TextView
+        <Button
             android:id="@+id/forget_password_link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:textSize="16dp"
-            android:autoLink="web"
-            android:text="@string/forget_password_link"
-            android:textColorLink="#143178"
-            android:linksClickable="true"/>
+            android:background="@drawable/forget_create_pass_border"
+            android:textSize="12dp"
+            android:text="Forget Password?"
+            android:textColor="#053153"
+            />
+        <Button
+            android:id="@+id/create_pass_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/forget_create_pass_border"
+            android:textSize="12dp"
+            android:text="Don't have an account? create one"
+            android:textColor="#053153"
+            />
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="345dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/linear_ly"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Don't have an acount? "
-            android:textColor="#143178"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@string/create_account_link"
-            android:textColorLink="#143178"
-            />
 
-
-   </LinearLayout>
 
 
 
