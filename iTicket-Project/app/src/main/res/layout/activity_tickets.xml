@@ -59,6 +59,7 @@
        android:layout_marginRight="50dp"
         android:background="@drawable/filter_sw_full_border">
         <Button
+            android:id="@+id/filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Filter"
@@ -88,6 +89,7 @@
             android:orientation="vertical"
             android:gravity="center">
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ticket_element"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ticket_info_border">

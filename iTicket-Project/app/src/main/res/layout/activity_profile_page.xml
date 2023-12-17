@@ -91,14 +91,17 @@
             android:baselineAligned="true"
             android:gravity="center_horizontal">
             <TextView
-                android:layout_width="268dp"
+                android:layout_width="240dp"
                 android:layout_height="28dp"
                 android:text="Profile Information"
                 android:textSize="18dp"
                 android:textColor="@color/black"/>
 
-            <TextView
-                android:layout_width="120dp"
+            <Button
+                android:id="@+id/edit_information"
+                android:background="@color/white"
+                android:textSize="14dp"
+                android:layout_width="180dp"
                 android:layout_height="28dp"
                 android:text="Edit information"
                 />
@@ -139,9 +142,12 @@
                 android:background="@drawable/learn_more_border"
                 android:layout_marginTop="16dp"/>
         </LinearLayout>
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="28dp"
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="0dp"
             android:text="Log Out"
             android:layout_marginTop="16dp"
             android:textSize="18dp"

@@ -56,6 +56,7 @@
             android:background="@drawable/learn_more_border"
             android:layout_marginTop="16dp"/>
         <Button
+            android:id="@+id/create_ticket"
             android:layout_width="345dp"
             android:layout_height="46dp"
             android:layout_marginTop="24dp"
