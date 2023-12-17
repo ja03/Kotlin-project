@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Tickets">
+    <ImageButton android:id="@+id/pop_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/back_icon"
+        android:backgroundTint="@color/white"/>
     <TextView android:id="@+id/tk_hd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -141,6 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="12dp"/>
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:clickable="true"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ticket_info_border">
@@ -192,6 +200,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="12dp"/>
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:clickable="true"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ticket_info_border">
@@ -243,6 +252,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="12dp"/>
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:clickable="true"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ticket_info_border">
@@ -294,6 +304,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="12dp"/>
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:clickable="true"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ticket_info_border">
@@ -345,6 +356,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="12dp"/>
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:clickable="true"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ticket_info_border">
