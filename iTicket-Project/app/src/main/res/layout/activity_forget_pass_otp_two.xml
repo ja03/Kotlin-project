@@ -55,7 +55,7 @@
             android:paddingLeft="16dp"
             android:textSize="18dp"
             />
-        <Button android:id="@+id/send_code_btn"
+        <Button android:id="@+id/confirm_account"
             android:layout_width="345dp"
             android:layout_height="46dp"
             android:layout_marginTop="20dp"
