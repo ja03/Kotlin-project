@@ -38,6 +38,7 @@
                 android:paddingTop="12dp"
                 android:gravity="left"
                 android:text="Add Paymant Feature"
+                android:layout_marginBottom="10dp"
                 android:textColor="#060047"
                 android:textStyle="bold"
                 android:textSize="18dp"/>

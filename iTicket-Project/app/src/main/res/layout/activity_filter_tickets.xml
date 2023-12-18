@@ -55,7 +55,6 @@
                 android:layout_weight="1"
                 android:paddingLeft="12dp"
                 android:entries="@array/sort_items"
-
                 />
         </LinearLayout>
 

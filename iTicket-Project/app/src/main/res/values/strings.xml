@@ -1,15 +1,18 @@
 <resources>
     <string name="app_name">Kotlin-Project</string>
+
     <string-array name="sort_items">
         <item>Sort client by</item>
         <item>A-Z</item>
         <item>Date</item>
     </string-array>
+
     <string-array name="sort_items_emp">
         <item>Sort employees by</item>
         <item>A-Z</item>
         <item>Date</item>
     </string-array>
+
     <string-array name="sort_items_state">
         <item>Sort state by</item>
         <item>Closed</item>
