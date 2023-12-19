@@ -19,4 +19,14 @@
         <item>Opened</item>
         <item>In-progress</item>
     </string-array>
+
+    <string-array name="LogIn_pos">
+        <item>Log In as a Client</item>
+        <item>Log In as an Employee</item>
+    </string-array>
+
+    <string-array name="SignUp_pos">
+        <item>Sign Up as a Client</item>
+        <item>Sign Up as an Employee</item>
+    </string-array>
 </resources>

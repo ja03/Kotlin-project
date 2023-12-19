@@ -16,7 +16,7 @@ class Tickets : AppCompatActivity() {
         val filterBtn = findViewById<Button>(R.id.filter)
         val ticketElement = findViewById<ConstraintLayout>(R.id.ticket_element)
         filterBtn.setOnClickListener{
-            val filterBtn = Intent(this, Filter::class.java)
+            val filterBtn = Intent(this, filter_tickets::class.java)
             startActivity(filterBtn)
         }
         ticketElement.setOnClickListener{

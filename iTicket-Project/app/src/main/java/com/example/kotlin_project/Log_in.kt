@@ -3,7 +3,10 @@ package com.example.kotlin_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button  // Import the Button class
+import android.widget.Spinner
+
 class Log_in : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +28,14 @@ class Log_in : AppCompatActivity() {
             val signupIntent = Intent(this,  Sign_up::class.java)
             startActivity(signupIntent)
         }
+        //----------------------------
+        var spinnerlogin: Spinner = findViewById(R.id.spinnerlogin)
+        var adapter_login: ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(
+            this,
+            R.array.LogIn_pos,
+            android.R.layout.simple_spinner_dropdown_item
+        )
+        spinnerlogin.adapter = adapter_login
 
     }
 }

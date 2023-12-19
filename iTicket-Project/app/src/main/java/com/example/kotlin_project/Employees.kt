@@ -14,6 +14,11 @@ class Employees : AppCompatActivity() {
             val popBtn = Intent(this, Home_page::class.java)
             startActivity(popBtn)
         }
+        val addEmpBtn = findViewById<ImageButton>(R.id.add_emp_btn)
+        addEmpBtn.setOnClickListener{
+            val addBtn = Intent(this, Sign_up::class.java)
+            startActivity(addBtn)
+        }
 
     }
 }

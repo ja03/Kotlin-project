@@ -56,13 +56,9 @@
             android:exported="true" />
         <activity
             android:name=".Welcoming_one"
-            android:exported="true" />
-        <activity
-            android:name=".Landing"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

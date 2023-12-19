@@ -33,7 +33,7 @@ class Home_page : AppCompatActivity() {
             startActivity(clientsBtn)
         }
         employeesBtn.setOnClickListener {
-            val employeesBtn = Intent(this, Clients::class.java)
+            val employeesBtn = Intent(this, Employees::class.java)
             startActivity(employeesBtn)
         }
 
