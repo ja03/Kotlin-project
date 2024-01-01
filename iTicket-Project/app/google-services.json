@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "307054398128",
+    "project_id": "iticketproject",
+    "storage_bucket": "iticketproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307054398128:android:4a22a6c33fdcf8ba8e0975",
+        "android_client_info": {
+          "package_name": "com.example.kotlin_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF2OZZFNx8bY6tiPzIEBldOqqYVXyYpL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

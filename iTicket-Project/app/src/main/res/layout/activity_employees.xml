@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Employees"
-    android:paddingBottom="-100dp">
+    android:paddingBottom="-100dp"
+    android:background="@color/white">
     <ImageButton android:id="@+id/pop_arrow"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -13,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/back_icon"
         android:backgroundTint="@color/white"/>
-    <TextView android:id="@+id/cl_hd"
+    <TextView android:id="@+id/emp_hd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Employees"
@@ -37,7 +38,7 @@
     <LinearLayout android:id="@+id/cl_no"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/cl_hd"
+        app:layout_constraintTop_toBottomOf="@id/emp_hd"
         app:layout_constraintStart_toStartOf="parent"
         android:orientation="horizontal"
         android:layout_marginTop="24dp"
@@ -110,195 +111,7 @@
                     android:layout_marginTop="25dp"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ticket_info_border"
-                android:layout_marginBottom="12dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:paddingLeft="12dp"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="12dp"
-                    android:gravity="left"
-                    android:text="Claire Hill\n\nahmadmahmod@gmail.com\n\n+962-779-977-660"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"/>
 
-                <ImageView
-                    android:id="@+id/person_icon02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:src="@drawable/gmai_icon"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="60dp"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/phone_icon"
-                    app:layout_constraintTop_toBottomOf="@+id/person_icon02"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="25dp"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ticket_info_border"
-                android:layout_marginBottom="12dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:paddingLeft="12dp"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="12dp"
-                    android:gravity="left"
-                    android:text="Claire Hill\n\nahmadmahmod@gmail.com\n\n+962-779-977-660"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"/>
-
-                <ImageView
-                    android:id="@+id/person_icon02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:src="@drawable/gmai_icon"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="60dp"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/phone_icon"
-                    app:layout_constraintTop_toBottomOf="@+id/person_icon02"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="25dp"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ticket_info_border"
-                android:layout_marginBottom="12dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:paddingLeft="12dp"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="12dp"
-                    android:gravity="left"
-                    android:text="Claire Hill\n\nahmadmahmod@gmail.com\n\n+962-779-977-660"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"/>
-
-                <ImageView
-                    android:id="@+id/person_icon02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:src="@drawable/gmai_icon"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="60dp"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/phone_icon"
-                    app:layout_constraintTop_toBottomOf="@+id/person_icon02"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="25dp"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ticket_info_border"
-                android:layout_marginBottom="12dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:paddingLeft="12dp"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="12dp"
-                    android:gravity="left"
-                    android:text="Claire Hill\n\nahmadmahmod@gmail.com\n\n+962-779-977-660"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"/>
-
-                <ImageView
-                    android:id="@+id/person_icon02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:src="@drawable/gmai_icon"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="60dp"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/phone_icon"
-                    app:layout_constraintTop_toBottomOf="@+id/person_icon02"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="25dp"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ticket_info_border">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:paddingLeft="12dp"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="12dp"
-                    android:gravity="left"
-                    android:text="Claire Hill\n\nahmadmahmod@gmail.com\n\n+962-779-977-660"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"/>
-
-                <ImageView
-                    android:id="@+id/person_icon02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:src="@drawable/gmai_icon"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="60dp"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/phone_icon"
-                    app:layout_constraintTop_toBottomOf="@+id/person_icon02"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="25dp"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

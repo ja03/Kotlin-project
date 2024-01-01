@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".filter_tickets">
+    tools:context=".filter_tickets"
+    android:background="@color/white">
     <ImageButton android:id="@+id/pop_arrow"
         android:layout_width="50dp"
         android:layout_height="50dp"
