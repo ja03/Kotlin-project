@@ -121,17 +121,17 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_vertical">
-            <EditText
+            <TextView
+                android:id="@+id/name_txt"
                 android:layout_width="372dp"
                 android:layout_height="43dp"
-                android:hint="Ahmad Mahmoud"
                 android:gravity="top"
                 android:paddingTop="12dp"
                 android:paddingLeft="18dp"
                 android:textSize="16dp"
                 android:background="@drawable/learn_more_border"
                 android:layout_marginTop="16dp"/>
-            <EditText
+            <TextView android:id="@+id/prof_email"
                 android:layout_width="372dp"
                 android:layout_height="43dp"
                 android:hint="ahmadmahmoud@gmail.com"
@@ -141,7 +141,7 @@
                 android:textSize="16dp"
                 android:background="@drawable/learn_more_border"
                 android:layout_marginTop="16dp"/>
-            <EditText
+            <TextView android:id="@+id/prof_pass"
                 android:layout_width="372dp"
                 android:layout_height="43dp"
                 android:hint="Password"
