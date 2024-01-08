@@ -16,10 +16,6 @@ class ProfilePage : AppCompatActivity() {
         binding = ActivityProfilePageBinding.inflate(layoutInflater, null, false)
         setContentView(binding.root)
 
-        binding.editInformation.setOnClickListener {
-            val editProfileBtn = Intent(this, EditInformation::class.java)
-            startActivity(editProfileBtn)
-        }
 
         binding.logout.setOnClickListener {
             val logoutBtn = Intent(this, Log_in::class.java)
@@ -27,10 +23,8 @@ class ProfilePage : AppCompatActivity() {
         }
 
         binding.popArrow.setOnClickListener {
-            val popBtn = Intent(this, Home_page::class.java)
-            startActivity(popBtn)
+            finish()
         }
-
         if (savedInstanceState != null) {
             email_str = savedInstanceState.getString("savedEmail", "")
             pass_str = savedInstanceState.getString("savedPass", "")
@@ -51,6 +45,8 @@ class ProfilePage : AppCompatActivity() {
         Toast.makeText(this,"store : $email_str , $pass_str , $name_str", Toast.LENGTH_SHORT).show()
     }
     private fun updateTextViews() {
+        binding.userEmail.text = email_str
+        binding.userName.text=name_str
         binding.profEmail.text = email_str
         binding.profPass.text = pass_str
         binding.nameTxt.text = name_str

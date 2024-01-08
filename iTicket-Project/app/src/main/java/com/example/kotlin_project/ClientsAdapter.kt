@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin_project.databinding.ClientItemBinding
 
 class ClientsAdapter(
-    private val clientList: List<Client>,
-    private val context:Activity
+    private var clientList: List<Client>,
+    private val context: Activity
 ) : RecyclerView.Adapter<ClientViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientViewHolder {
         val viewBinding = ClientItemBinding.inflate(
@@ -25,11 +25,15 @@ class ClientsAdapter(
     override fun onBindViewHolder(holder: ClientViewHolder, position: Int) {
         holder.bind(clientList[position])
     }
+
+    fun updateData(newList: List<Client>) {
+        clientList = newList
+        notifyDataSetChanged()
+    }
 }
 
 class ClientViewHolder(private val viewBinding: ClientItemBinding) :
     RecyclerView.ViewHolder(viewBinding.root) {
-
     fun bind(client: Client) {
         viewBinding.clientInfo.text = "${client.name}\n\n${client.email}\n\n${client.number}"
         // You can customize further bindings or actions based on your requirements

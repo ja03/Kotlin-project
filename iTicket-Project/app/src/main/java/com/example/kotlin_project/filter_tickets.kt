@@ -1,12 +1,12 @@
 package com.example.kotlin_project
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Spinner
-import androidx.appcompat.app.AppCompatActivity
-import android.content.Intent
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Spinner
+import androidx.appcompat.app.AppCompatActivity
 
 class filter_tickets : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,8 +20,7 @@ class filter_tickets : AppCompatActivity() {
         }
         val popBtn = findViewById<ImageButton>(R.id.pop_arrow)
         popBtn.setOnClickListener{
-            val popBtn = Intent(this, Tickets::class.java)
-            startActivity(popBtn)
+           finish()
         }
         //-------------------------
         var spinnerSortClient:Spinner = findViewById(R.id.spinnerSortClient)

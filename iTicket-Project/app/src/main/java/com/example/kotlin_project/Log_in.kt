@@ -21,10 +21,7 @@ class Log_in : AppCompatActivity() {
         binding = ActivityLogInBinding.inflate(layoutInflater, null, false)
         setContentView(binding.root)
         // Buttons :
-        binding.forgetPasswordLink.setOnClickListener{
-            val forgetPassIntent = Intent(this,  Forget_Pass_OTP_one::class.java)
-            startActivity(forgetPassIntent)
-        }
+
         binding.signUpLink.setOnClickListener{
             val signupIntent = Intent(this,  Sign_up::class.java)
             startActivity(signupIntent)

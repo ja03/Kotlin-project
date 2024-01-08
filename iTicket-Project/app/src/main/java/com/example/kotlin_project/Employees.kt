@@ -1,9 +1,9 @@
 package com.example.kotlin_project
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 
 class Employees : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,8 +11,7 @@ class Employees : AppCompatActivity() {
         setContentView(R.layout.activity_employees)
         val popBtn = findViewById<ImageButton>(R.id.pop_arrow)
         popBtn.setOnClickListener{
-            val popBtn = Intent(this, Home_page::class.java)
-            startActivity(popBtn)
+           finish()
         }
         val addEmpBtn = findViewById<ImageButton>(R.id.add_emp_btn)
         addEmpBtn.setOnClickListener{

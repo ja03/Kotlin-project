@@ -36,6 +36,7 @@ class Home_page  : AppCompatActivity() {
             val employeesBtn = Intent(this, Employees::class.java)
             startActivity(employeesBtn)
         }
+        //---------------------------
         if (savedInstanceState == null) {
             str = intent.getStringExtra("fName").toString()
         } else {
@@ -47,7 +48,6 @@ class Home_page  : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.putString("savedName",str)
     }
-
     private fun updateTextViews() {
         val hello_ed = binding.helloTxt
         val header_name = binding.dashName
@@ -70,7 +70,6 @@ class Home_page  : AppCompatActivity() {
                 profBtn.putExtra("passCl",fieldPass)
                 profBtn.putExtra("nameCl",fieldName)
                 startActivity(profBtn)
-                finish()
             }
     }
     private fun getClientInfo02(email: String){
@@ -86,8 +85,6 @@ class Home_page  : AppCompatActivity() {
                 clBtn.putExtra("passClient",fieldPass)
                 clBtn.putExtra("numClient",fieldName)
                 startActivity(clBtn)
-                finish()
             }
     }
-
 }

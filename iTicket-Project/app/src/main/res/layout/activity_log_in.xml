@@ -75,16 +75,6 @@
             android:textAllCaps="false"
             />
         <Button
-            android:id="@+id/forget_password_link"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/forget_create_pass_border"
-            android:textSize="12dp"
-            android:text="Forget Password?"
-            android:textColor="#053153"
-            />
-        <Button
             android:id="@+id/sign_up_link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

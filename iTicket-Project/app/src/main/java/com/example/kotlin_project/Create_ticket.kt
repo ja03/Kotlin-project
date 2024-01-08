@@ -1,10 +1,10 @@
 package com.example.kotlin_project
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 
 class Create_ticket : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,8 +19,7 @@ class Create_ticket : AppCompatActivity() {
         }
 
         popBtn.setOnClickListener{
-            val popBtn = Intent(this, Home_page::class.java)
-            startActivity(popBtn)
+            finish()
         }
     }
 }
