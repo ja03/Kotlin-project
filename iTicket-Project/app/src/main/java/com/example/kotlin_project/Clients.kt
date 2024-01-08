@@ -1,7 +1,6 @@
 package com.example.kotlin_project
 
 import Data.Client
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,8 +17,7 @@ class Clients : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.popArrow.setOnClickListener {
-            val homePageIntent = Intent(this, Home_page::class.java)
-            startActivity(homePageIntent)
+          finish()
         }
 
         // Set up RecyclerView with LinearLayoutManager

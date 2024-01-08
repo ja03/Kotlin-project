@@ -39,6 +39,7 @@
             android:layout_marginTop="50dp"
             />
         <EditText
+            android:id="@+id/title_tck"
             android:layout_width="345dp"
             android:layout_height="43dp"
             android:hint="Ticket Name"
@@ -47,6 +48,7 @@
             android:background="@drawable/learn_more_border"
             android:layout_marginTop="50dp"/>
         <EditText
+            android:id="@+id/desc"
             android:layout_width="345dp"
             android:layout_height="128dp"
             android:hint="Add a description"
@@ -57,6 +59,7 @@
             android:background="@drawable/learn_more_border"
             android:layout_marginTop="16dp"/>
         <EditText
+            android:id="@+id/ass_emp"
             android:layout_width="345dp"
             android:layout_height="43dp"
             android:hint="Assign"

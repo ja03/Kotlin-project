@@ -6,12 +6,15 @@ import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-
+import com.example.kotlin_project.databinding.ActivityTicketsBinding
 
 class Tickets : AppCompatActivity() {
+    private lateinit var binding: ActivityTicketsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tickets)
+        binding = ActivityTicketsBinding.inflate(layoutInflater, null, false)
+        setContentView(binding.root)
+
         val filterBtn = findViewById<Button>(R.id.filter)
         val ticketElement = findViewById<ConstraintLayout>(R.id.ticket_element)
         filterBtn.setOnClickListener{
@@ -28,4 +31,5 @@ class Tickets : AppCompatActivity() {
         }
 
     }
+
 }
