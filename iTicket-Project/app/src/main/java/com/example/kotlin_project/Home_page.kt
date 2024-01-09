@@ -17,7 +17,9 @@ class Home_page  : AppCompatActivity() {
         binding = ActivityHomePageBinding.inflate(layoutInflater, null, false)
         setContentView(binding.root)
         binding.newTaskImg.setOnClickListener{
-            val newTaskBtn = Intent(this, Create_ticket::class.java)
+            val x = intent.getStringExtra("fName").toString()
+            var newTaskBtn = Intent(this, Create_ticket::class.java)
+            newTaskBtn.putExtra("userNm",x)
             startActivity(newTaskBtn)
         }
         binding.profilePage.setOnClickListener{

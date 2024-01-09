@@ -21,10 +21,6 @@ class Tickets : AppCompatActivity() {
             val filterBtn = Intent(this, filter_tickets::class.java)
             startActivity(filterBtn)
         }
-        ticketElement.setOnClickListener{
-            val ticketElement = Intent(this, Ticket_information::class.java)
-            startActivity(ticketElement)
-        }
         val popBtn = findViewById<ImageButton>(R.id.pop_arrow)
         popBtn.setOnClickListener{
             finish()

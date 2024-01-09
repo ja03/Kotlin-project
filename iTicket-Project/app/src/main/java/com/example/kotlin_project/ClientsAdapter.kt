@@ -21,11 +21,9 @@ class ClientsAdapter(
     }
 
     override fun getItemCount(): Int = clientList.size
-
     override fun onBindViewHolder(holder: ClientViewHolder, position: Int) {
         holder.bind(clientList[position])
     }
-
     fun updateData(newList: List<Client>) {
         clientList = newList
         notifyDataSetChanged()
