@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opened"
+            android:text=" Opened"
             android:textSize="40dp"
             android:textColor="@color/black"
             />
@@ -65,7 +65,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/tk_no_con"
-       android:layout_marginRight="50dp"
+        android:layout_marginRight="50dp"
         android:background="@drawable/filter_sw_full_border">
         <Button
             android:id="@+id/filter"

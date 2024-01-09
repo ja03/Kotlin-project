@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class Create_ticket : AppCompatActivity() {
     private lateinit var binding: ActivityCreateTicketBinding
     private lateinit var vbinding: ActivityTicketsBinding
-    private lateinit var ticketAdapter: ticketAdapter
+    private lateinit var ticketAdapter: TicketAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateTicketBinding.inflate(layoutInflater, null, false)
@@ -52,7 +52,7 @@ class Create_ticket : AppCompatActivity() {
                     val layoutManager = LinearLayoutManager(this)
                     vbinding.recTicket.layoutManager = layoutManager
                     getTicketInfoFromFirestore()
-                    ticketAdapter = ticketAdapter(ArrayList(), this)
+                    ticketAdapter = TicketAdapter(ArrayList(), this)
                     vbinding.recTicket.adapter = ticketAdapter
                     Toast.makeText(this, "Ticket Added", Toast.LENGTH_SHORT).show()
                 } else {
