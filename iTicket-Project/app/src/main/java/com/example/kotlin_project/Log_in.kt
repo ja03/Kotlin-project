@@ -25,8 +25,9 @@ class Log_in : AppCompatActivity() {
             startActivity(signupIntent)
         }
         //----------------------------
+        // Spinners :
+        //--------------------------------
         // Log in :
-
         binding.logInBtn.setOnClickListener{
             var email = binding.emailTxt.text.toString()
             var password = binding.passwordTxt.text.toString()
@@ -52,20 +53,20 @@ class Log_in : AppCompatActivity() {
             }
         }
         //----------------------------------
-
     }
     private fun getClientName(email: String){
+        //Toast.makeText(this,"${getType(email)},hhhh",Toast.LENGTH_SHORT)
         val db = FirebaseFirestore.getInstance()
         val docRef = db.collection("clients").document(email)
         docRef.get()
             .addOnSuccessListener { docSnap ->
                 val fieldName :String= docSnap.getString("username") ?:""
-                val loginIntent = Intent(this, Home_page::class.java)
-                loginIntent.putExtra("fName",fieldName)
-                loginIntent.putExtra("emailCl",email)
-                startActivity(loginIntent)
-                finish()
+                val signUpIntent = Intent(this, Home_page::class.java)
+                signUpIntent.putExtra("fName",fieldName)
+                signUpIntent.putExtra("emailCl",email)
+                startActivity(signUpIntent)
             }
+
 
     }
 

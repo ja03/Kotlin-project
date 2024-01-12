@@ -44,9 +44,10 @@
         android:layout_marginTop="24dp"
         android:layout_marginLeft="24dp">
         <TextView
+            android:id="@+id/empSz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10"
+            android:text=""
             android:textSize="40dp"
             android:textColor="#41C09C"
             />
@@ -54,12 +55,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
-            android:text="Hard Workers"
+            android:text=" Hard Workers"
             android:textSize="40dp"
             android:textColor="#060047"
             />
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recEmp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"

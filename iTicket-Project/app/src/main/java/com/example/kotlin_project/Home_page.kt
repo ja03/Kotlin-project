@@ -50,7 +50,7 @@ class Home_page  : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.putString("savedName",str)
     }
-    private fun updateTextViews() {
+    private fun updateTextViews(){
         val hello_ed = binding.helloTxt
         val header_name = binding.dashName
         hello_ed.text = "Hello $str 👋"

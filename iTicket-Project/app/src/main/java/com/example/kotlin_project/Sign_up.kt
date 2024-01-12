@@ -105,6 +105,7 @@ class Sign_up : AppCompatActivity() {
         return false
     }
     private fun getClientName(email: String){
+        //Toast.makeText(this,"${getType(email)},hhhh",Toast.LENGTH_SHORT)
         val db = FirebaseFirestore.getInstance()
         val docRef = db.collection("clients").document(email)
         docRef.get()
@@ -113,9 +114,7 @@ class Sign_up : AppCompatActivity() {
                 val signUpIntent = Intent(this, Home_page::class.java)
                 signUpIntent.putExtra("fName",fieldName)
                 signUpIntent.putExtra("emailCl",email)
-                startActivity(signUpIntent)
-                finish()
             }
-
     }
+
 }
