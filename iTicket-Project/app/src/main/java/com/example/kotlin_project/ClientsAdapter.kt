@@ -34,7 +34,5 @@ class ClientViewHolder(private val viewBinding: ClientItemBinding) :
     RecyclerView.ViewHolder(viewBinding.root) {
     fun bind(client: Client) {
         viewBinding.clientInfo.text = "${client.name}\n\n${client.email}\n\n${client.number}"
-        // You can customize further bindings or actions based on your requirements
-        // For example, handling clicks on different icons, etc.
     }
 }

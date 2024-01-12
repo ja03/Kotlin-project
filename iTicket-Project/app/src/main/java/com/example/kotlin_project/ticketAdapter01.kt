@@ -1,5 +1,6 @@
 package com.example.kotlin_project
 
+
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -34,7 +35,6 @@ class TicketAdapter(
 
 class TicketViewHolder(private val viewBinding: TicketItemBinding) :
     RecyclerView.ViewHolder(viewBinding.root) {
-
     fun bind(ticket: Ticket) {
         viewBinding.ticketInfo.text = "${ticket.title}\n\n${ticket.client}\n\n${ticket.employee}"
         viewBinding.inProgress01.text = ticket.status

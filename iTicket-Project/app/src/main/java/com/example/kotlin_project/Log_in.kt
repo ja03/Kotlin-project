@@ -2,8 +2,6 @@ package com.example.kotlin_project
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlin_project.databinding.ActivityLogInBinding
@@ -27,15 +25,6 @@ class Log_in : AppCompatActivity() {
             startActivity(signupIntent)
         }
         //----------------------------
-        // Spinners :
-        var spinnerlogin: Spinner = findViewById(R.id.spinnerlogin)
-        var adapter_login: ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(
-            this,
-            R.array.LogIn_pos,
-            android.R.layout.simple_spinner_dropdown_item
-        )
-        spinnerlogin.adapter = adapter_login
-        //--------------------------------
         // Log in :
 
         binding.logInBtn.setOnClickListener{

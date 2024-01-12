@@ -40,6 +40,9 @@ class Sign_up : AppCompatActivity() {
             val password = binding.signPasswordTxt.text.toString().trim()
             val confPass = binding.confPasswordTxt.text.toString().trim()
             val number = binding.numberEt.text.toString()
+            val Spinner:Spinner=findViewById(R.id.spinnerSignUp)
+            val typeOfUser = Spinner.getSelectedItem().toString();
+
             if (email.isBlank()) Toast.makeText(this, "Enter Email", Toast.LENGTH_SHORT).show()
             else if(username.isBlank())Toast.makeText(this, "Enter User Name ", Toast.LENGTH_SHORT).show()
             else if (password.isBlank())Toast.makeText(this, "Enter Password", Toast.LENGTH_SHORT).show()
@@ -54,7 +57,7 @@ class Sign_up : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email,password)
                     .addOnCompleteListener{ task ->
                         if (task.isSuccessful) {
-                            addClient(email,password,username,number)
+                            addOb(email,password,username,number,typeOfUser)
                             Toast.makeText(this, "Account Created", Toast.LENGTH_SHORT).show()
                             getClientName(email)
                         }
@@ -66,18 +69,28 @@ class Sign_up : AppCompatActivity() {
         }
         //-------------------------------
     }
-    fun addClient(email:String,password:String,username:String,number:String){
-        val clientInfo = hashMapOf(
+    fun addOb(email:String,password:String,username:String,number:String,typeOfUser:String){
+        val info = hashMapOf(
+            "typeOfUser" to typeOfUser,
             "email" to email,
             "password" to password,
             "username" to username,
             "number" to number
         )
-        db.collection("clients").document(binding.signupEmailTxt.text.toString()).set(clientInfo)
-            .addOnCompleteListener{
-                if(it.isSuccessful)Toast.makeText(this,"Account Added",Toast.LENGTH_SHORT)
-                else  Toast.makeText(this,"Account Adding Failed",Toast.LENGTH_SHORT)
-            }
+        if(typeOfUser=="Sign Up as an Employee"){
+            db.collection("employees").document(binding.signupEmailTxt.text.toString()).set(info)
+                .addOnCompleteListener{
+                    if(it.isSuccessful)Toast.makeText(this,"Account Added",Toast.LENGTH_SHORT)
+                    else  Toast.makeText(this,"Account Adding Failed",Toast.LENGTH_SHORT)
+                }
+        }
+        else{
+            db.collection("clients").document(binding.signupEmailTxt.text.toString()).set(info)
+                .addOnCompleteListener{
+                    if(it.isSuccessful)Toast.makeText(this,"Account Added",Toast.LENGTH_SHORT)
+                    else  Toast.makeText(this,"Account Adding Failed",Toast.LENGTH_SHORT)
+                }
+        }
     }
     private fun checkCap(str:String):Boolean{
         for(c in str){
