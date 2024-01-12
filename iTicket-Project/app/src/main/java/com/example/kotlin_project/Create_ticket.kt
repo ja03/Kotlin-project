@@ -28,6 +28,7 @@ class Create_ticket : AppCompatActivity() {
             val createTicketBtn = Intent(this, Tickets::class.java)
             addTicket()
             startActivity(createTicketBtn)
+            finish()
         }
         popBtn.setOnClickListener{
             finish()

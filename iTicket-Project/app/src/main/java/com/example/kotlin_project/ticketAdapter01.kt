@@ -36,7 +36,7 @@ class TicketViewHolder(private val viewBinding: TicketItemBinding) :
     RecyclerView.ViewHolder(viewBinding.root) {
 
     fun bind(ticket: Ticket) {
-        viewBinding.ticketInfo.text = ticket.title
+        viewBinding.ticketInfo.text = "${ticket.title}\n\n${ticket.client}\n\n${ticket.employee}"
         viewBinding.inProgress01.text = ticket.status
         // Add logic to set other views based on your Ticket data
         // For example, set employee name, client name, etc.

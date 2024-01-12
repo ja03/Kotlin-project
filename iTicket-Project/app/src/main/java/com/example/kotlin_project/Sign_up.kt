@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlin_project.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -55,8 +56,7 @@ class Sign_up : AppCompatActivity() {
                         if (task.isSuccessful) {
                             addClient(email,password,username,number)
                             Toast.makeText(this, "Account Created", Toast.LENGTH_SHORT).show()
-                            val done=Intent(this, Log_in::class.java)
-                            startActivity(done)
+                            getClientName(email)
                         }
                         else{
                             Toast.makeText(this, "Account Creation Failed", Toast.LENGTH_SHORT).show()
@@ -90,5 +90,19 @@ class Sign_up : AppCompatActivity() {
             if(c.isLowerCase())return true
         }
         return false
+    }
+    private fun getClientName(email: String){
+        val db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("clients").document(email)
+        docRef.get()
+            .addOnSuccessListener { docSnap ->
+                val fieldName :String= docSnap.getString("username") ?:""
+                val signUpIntent = Intent(this, Home_page::class.java)
+                signUpIntent.putExtra("fName",fieldName)
+                signUpIntent.putExtra("emailCl",email)
+                startActivity(signUpIntent)
+                finish()
+            }
+
     }
 }

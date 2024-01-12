@@ -2,7 +2,6 @@ package com.example.kotlin_project
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlin_project.databinding.ActivityProfilePageBinding
 
@@ -15,7 +14,6 @@ class ProfilePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfilePageBinding.inflate(layoutInflater, null, false)
         setContentView(binding.root)
-
 
         binding.logout.setOnClickListener {
             val logoutBtn = Intent(this, Log_in::class.java)
@@ -42,7 +40,6 @@ class ProfilePage : AppCompatActivity() {
         var a=outState.putString("savedEmail", email_str)
         var b=outState.putString("savedPass", pass_str)
         var c=outState.putString("savedName", name_str)
-        Toast.makeText(this,"store : $email_str , $pass_str , $name_str", Toast.LENGTH_SHORT).show()
     }
     private fun updateTextViews() {
         binding.userEmail.text = email_str
@@ -50,6 +47,5 @@ class ProfilePage : AppCompatActivity() {
         binding.profEmail.text = email_str
         binding.profPass.text = pass_str
         binding.nameTxt.text = name_str
-        Toast.makeText(this,"update : $email_str , $pass_str , $name_str", Toast.LENGTH_SHORT).show()
     }
 }
