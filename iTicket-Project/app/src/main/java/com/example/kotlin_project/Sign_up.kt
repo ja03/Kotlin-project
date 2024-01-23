@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlin_project.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -16,6 +17,7 @@ class Sign_up : AppCompatActivity() {
     private var auth = FirebaseAuth.getInstance()
     private lateinit var binding: ActivitySignUpBinding
     private var db = Firebase.firestore
+    private val viewModel: UsersViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater, null, false)
@@ -55,6 +57,7 @@ class Sign_up : AppCompatActivity() {
             else if(password!=confPass)Toast.makeText(this, "Passwords don't match", Toast.LENGTH_SHORT).show()
             else {
                 auth.createUserWithEmailAndPassword(email,password)
+
                     .addOnCompleteListener{ task ->
                         if (task.isSuccessful) {
                             addOb(email,password,username,number,typeOfUser)
@@ -78,16 +81,22 @@ class Sign_up : AppCompatActivity() {
             "number" to number
         )
         if(typeOfUser=="Sign Up as an Employee"){
-            db.collection("employees").document(binding.signupEmailTxt.text.toString()).set(info)
+            db.collection("employees").document(email).set(info)
                 .addOnCompleteListener{
-                    if(it.isSuccessful)Toast.makeText(this,"Account Added",Toast.LENGTH_SHORT)
+                    if(it.isSuccessful){
+                        Toast.makeText(this,"Account Added",Toast.LENGTH_SHORT)
+                        getUsersFromFirestore()
+                    }
                     else  Toast.makeText(this,"Account Adding Failed",Toast.LENGTH_SHORT)
                 }
         }
         else{
-            db.collection("clients").document(binding.signupEmailTxt.text.toString()).set(info)
+            db.collection("clients").document(email).set(info)
                 .addOnCompleteListener{
-                    if(it.isSuccessful)Toast.makeText(this,"Account Added",Toast.LENGTH_SHORT)
+                    if(it.isSuccessful){
+                        Toast.makeText(this,"Account Added",Toast.LENGTH_SHORT)
+                        getUsersFromFirestore()
+                    }
                     else  Toast.makeText(this,"Account Adding Failed",Toast.LENGTH_SHORT)
                 }
         }
@@ -114,7 +123,37 @@ class Sign_up : AppCompatActivity() {
                 val signUpIntent = Intent(this, Home_page::class.java)
                 signUpIntent.putExtra("fName",fieldName)
                 signUpIntent.putExtra("emailCl",email)
+                startActivity(signUpIntent)
             }
+    }
+
+    private fun getUsersFromFirestore() {
+        viewModel.deleteAllUsers()
+        val db = FirebaseFirestore.getInstance()
+        val collectionRef = db.collection("clients")
+        collectionRef.get().addOnSuccessListener { documents ->
+            for (document in documents) {
+                val name = document.getString("username") ?: ""
+                val email = document.getString("email") ?: ""
+                val number = document.getString("number") ?: ""
+                val password = document.getString("password") ?: ""
+                val usertype = document.getString("typeOfUser") ?: ""
+                viewModel.addUser(name,email,number,usertype,password)
+            }
+            val collectionRef1 = db.collection("employees")
+            collectionRef1.get().addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val name = document.getString("username") ?: ""
+                    val email = document.getString("email") ?: ""
+                    val number = document.getString("number") ?: ""
+                    val password = document.getString("password") ?: ""
+                    val usertype = document.getString("typeOfUser") ?: ""
+                    viewModel.addUser(name, email, number, usertype, password)
+                }
+            }
+        }.addOnFailureListener {
+            Toast.makeText(this, "Failed to fetch users", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

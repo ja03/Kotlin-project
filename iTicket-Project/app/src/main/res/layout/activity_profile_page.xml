@@ -127,7 +127,7 @@
             <TextView android:id="@+id/prof_email"
                 android:layout_width="372dp"
                 android:layout_height="43dp"
-                android:hint="ahmadmahmoud@gmail.com"
+                android:hint="Email"
                 android:gravity="top"
                 android:paddingTop="12dp"
                 android:paddingLeft="18dp"

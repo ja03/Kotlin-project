@@ -24,12 +24,14 @@ class Create_ticket : AppCompatActivity() {
         setContentView(binding.root)
         val createTicketBtn = findViewById<Button>(R.id.create_ticket)
         val popBtn = findViewById<ImageButton>(R.id.pop_arrow)
+
         createTicketBtn.setOnClickListener{
             val createTicketBtn = Intent(this, Tickets::class.java)
             addTicket()
             startActivity(createTicketBtn)
             finish()
         }
+
         popBtn.setOnClickListener{
             finish()
         }

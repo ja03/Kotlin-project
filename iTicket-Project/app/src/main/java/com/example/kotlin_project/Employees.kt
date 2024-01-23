@@ -32,7 +32,6 @@ class Employees : AppCompatActivity() {
         getEmpInfoFromFirestore()
         empAdapter0= empAdapter(ArrayList(), this)
         binding.recEmp.adapter = empAdapter0
-
     }
     private fun getEmpInfoFromFirestore() {
         val db = FirebaseFirestore.getInstance()
