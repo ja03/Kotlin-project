@@ -26,7 +26,6 @@ class Log_in : AppCompatActivity() {
         binding = ActivityLogInBinding.inflate(layoutInflater, null, false)
         setContentView(binding.root)
         // Buttons :
-
         binding.signUpLink.setOnClickListener{
             val signupIntent = Intent(this,  Sign_up::class.java)
             startActivity(signupIntent)
@@ -45,19 +44,22 @@ class Log_in : AppCompatActivity() {
                 Toast.makeText(this, "Enter Password",Toast.LENGTH_SHORT).show()
             }
             else{
-
-                if(isOnline(applicationContext))auth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            Toast.makeText(this, "Log in successful", Toast.LENGTH_SHORT).show()
-                            getClientName(email)
+                if(isOnline(applicationContext)) {
+                    auth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener{ task ->
+                            if (task.isSuccessful) {
+                                Toast.makeText(this, "Log in successful", Toast.LENGTH_SHORT).show()
+                                getClientName(email)
+                            } else {
+                                Toast.makeText(
+                                    this,
+                                    "Invalid Email or Wrong Password",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
                         }
-                        else {
-                            Toast.makeText(this, "Invalid Email or Wrong Password", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                else observeUserDataAndCheckExistence(email)
-
+                }
+                else observeUserDataAndCheckExistence(email,password)
             }
         }
         //----------------------------------
@@ -72,14 +74,15 @@ class Log_in : AppCompatActivity() {
 
         return activeNetwork.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
-    private fun observeUserDataAndCheckExistence(email: String) {
+    private fun observeUserDataAndCheckExistence(email: String,passwordEntered: String) {
         lateinit var fieldName: String
         var exists: Boolean = false
 
-        viewModel.selectedUserData.observe(this, Observer { user ->
+        viewModel.selectedUserData.observe(this ,Observer{ user ->
             user?.let {
                 fieldName = user.name
-               handleUserExistence(exists, fieldName, email)
+              handleUserExistence(exists, fieldName, email)
+
             }
         })
 
@@ -89,7 +92,7 @@ class Log_in : AppCompatActivity() {
             else Toast.makeText(this, "Invalid Email or Wrong Password", Toast.LENGTH_SHORT).show()
         })
 
-        viewModel.checkUserByEmail(email)
+        viewModel.checkUserByEmail(email,passwordEntered)
     }
 
     private fun handleUserExistence(exists: Boolean, fieldName: String, email: String) {
@@ -109,13 +112,28 @@ class Log_in : AppCompatActivity() {
         val docRef = db.collection("clients").document(email)
         docRef.get()
             .addOnSuccessListener { docSnap ->
-                val fieldName :String= docSnap.getString("username") ?:""
-                val signUpIntent = Intent(this, Home_page::class.java)
-                signUpIntent.putExtra("fName",fieldName)
-                signUpIntent.putExtra("emailCl",email)
-                startActivity(signUpIntent)
+                val fieldName :String= docSnap.getString("username") ?:"NONE"
+               if(fieldName!="NONE"){
+                   val signUpIntent = Intent(this, Home_page::class.java)
+                   signUpIntent.putExtra("fName",fieldName)
+                   signUpIntent.putExtra("emailCl",email)
+                   startActivity(signUpIntent)
+               }
+                else{
+                   val db = FirebaseFirestore.getInstance()
+                   val docRef = db.collection("employees").document(email)
+                   docRef.get()
+                       .addOnSuccessListener { docSnap ->
+                           val fieldName :String= docSnap.getString("username") ?:"NONE"
+                           if(fieldName!="NONE"){
+                               val signUpIntent = Intent(this, Home_page::class.java)
+                               signUpIntent.putExtra("fName",fieldName)
+                               signUpIntent.putExtra("emailCl",email)
+                               startActivity(signUpIntent)
+                           }
+                       }
+               }
             }
-
 
 
 

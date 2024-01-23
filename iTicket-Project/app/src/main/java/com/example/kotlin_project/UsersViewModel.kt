@@ -11,6 +11,9 @@ import kotlinx.coroutines.launch
 
 class UsersViewModel(application: Application):AndroidViewModel (application){
 
+    private val _selectedUserList= MutableLiveData<List<User>>()
+    val selectedUserList: LiveData<List<User>> = _selectedUserList
+
     private val _selectedUserData= MutableLiveData<User>()
     val selectedUserData: LiveData<User> = _selectedUserData
 
@@ -41,11 +44,17 @@ class UsersViewModel(application: Application):AndroidViewModel (application){
             _selectedUserData.value=user
         }
     }
-   fun checkUserByEmail(email: String) {
+   fun checkUserByEmail(email: String,password: String) {
         viewModelScope.launch {
-            val user = UserRepo.checkUserByEmail(email)
+            var user = UserRepo.checkUserByEmail(email,password)
             _exist.value = user != null
 
+        }
+    }
+    fun getUsersBytype(type: String){
+        viewModelScope.launch {
+          var Lst=UserRepo.getUsersByType(type)
+          _selectedUserList.value=Lst
         }
     }
 }

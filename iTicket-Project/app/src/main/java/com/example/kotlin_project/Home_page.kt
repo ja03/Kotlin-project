@@ -1,8 +1,13 @@
 package com.example.kotlin_project
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.example.kotlin_project.databinding.ActivityHomePageBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -12,6 +17,7 @@ class Home_page  : AppCompatActivity() {
     var tmp_pass:String=""
     var tmp_name:String=""
     var str:String=""
+    private val viewModel: UsersViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         binding = ActivityHomePageBinding.inflate(layoutInflater, null, false)
@@ -31,8 +37,8 @@ class Home_page  : AppCompatActivity() {
             startActivity(ticketsBtn)
         }
         binding.clientsPage.setOnClickListener { val clientsBtn = Intent(this, Clients::class.java)
-            val email02 = intent.getStringExtra("emailCl").toString()
-            getClientInfo02(email02)
+            val clBtn = Intent(this, Clients::class.java)
+            startActivity(clBtn)
         }
         binding.employeesPage.setOnClickListener {
             val employeesBtn = Intent(this, Employees::class.java)
@@ -57,36 +63,73 @@ class Home_page  : AppCompatActivity() {
         header_name.text = "$str\nDashboard"
     }
     private fun getClientInfo(email: String){
-        val db = FirebaseFirestore.getInstance()
-        val docRef = db.collection("clients").document(email)
-        docRef.get()
-            .addOnSuccessListener { docSnap ->
-                val fieldEmail = docSnap.getString("email") ?:""
-                val fieldPass = docSnap.getString("password") ?:""
-                val fieldName = docSnap.getString("username") ?:""
-                tmp_email=fieldEmail
-                tmp_pass=fieldPass
-                tmp_name=fieldName
-                val profBtn = Intent(this, ProfilePage::class.java)
-                profBtn.putExtra("emailCl",fieldEmail)
-                profBtn.putExtra("passCl",fieldPass)
-                profBtn.putExtra("nameCl",fieldName)
-                startActivity(profBtn)
-            }
+        if(isOnline(applicationContext)) {
+            val db = FirebaseFirestore.getInstance()
+            val docRef = db.collection("clients").document(email)
+            docRef.get()
+                .addOnSuccessListener { docSnap ->
+                    val fieldEmail = docSnap.getString("email") ?: "NONE"
+                    if (fieldEmail != "NONE") {
+                        val fieldPass = docSnap.getString("password") ?: ""
+                        val fieldName = docSnap.getString("username") ?: ""
+                        tmp_email = fieldEmail
+                        tmp_pass = fieldPass
+                        tmp_name = fieldName
+                        val profBtn = Intent(this, ProfilePage::class.java)
+                        profBtn.putExtra("emailCl", fieldEmail)
+                        profBtn.putExtra("passCl", fieldPass)
+                        profBtn.putExtra("nameCl", fieldName)
+                        startActivity(profBtn)
+                    } else {
+                        val docRef = db.collection("employees").document(email)
+                        docRef.get()
+                            .addOnSuccessListener { docSnap ->
+                                val fieldEmail = docSnap.getString("email") ?: "NONE"
+                                if (fieldEmail != "NONE") {
+                                    val fieldPass = docSnap.getString("password") ?: ""
+                                    val fieldName = docSnap.getString("username") ?: ""
+                                    tmp_email = fieldEmail
+                                    tmp_pass = fieldPass
+                                    tmp_name = fieldName
+                                    val profBtn = Intent(this, ProfilePage::class.java)
+                                    profBtn.putExtra("emailCl", fieldEmail)
+                                    profBtn.putExtra("passCl", fieldPass)
+                                    profBtn.putExtra("nameCl", fieldName)
+                                    startActivity(profBtn)
+                                }
+                            }
+
+                    }
+                }
+        }
+        else{
+            viewModel.selectedUserData.observe(this , Observer{ user ->
+                user?.let {
+                    val fieldEmail=user.email
+                    val fieldPass=user.password
+                    val fieldName=user.name
+                    tmp_email=fieldEmail
+                    tmp_pass=fieldPass
+                    tmp_name=fieldName
+                    val profBtn = Intent(this, ProfilePage::class.java)
+                    profBtn.putExtra("emailCl",fieldEmail)
+                    profBtn.putExtra("passCl",fieldPass)
+                    profBtn.putExtra("nameCl",fieldName)
+                    startActivity(profBtn)
+                }
+            })
+            viewModel.getUserByEmail(email)
+
+        }
     }
-    private fun getClientInfo02(email: String){
-        val db = FirebaseFirestore.getInstance()
-        val docRef = db.collection("clients").document(email)
-        docRef.get()
-            .addOnSuccessListener { docSnap ->
-                val fieldEmail = docSnap.getString("email") ?:""
-                val fieldPass = docSnap.getString("password") ?:""
-                val fieldName = docSnap.getString("number") ?:""
-                val clBtn = Intent(this, Clients::class.java)
-                clBtn.putExtra("emailClient",fieldEmail)
-                clBtn.putExtra("passClient",fieldPass)
-                clBtn.putExtra("numClient",fieldName)
-                startActivity(clBtn)
-            }
+    fun isOnline(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        val networkCapabilities = connectivityManager.activeNetwork ?: return false
+        val activeNetwork =
+            connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return false
+
+        return activeNetwork.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 }

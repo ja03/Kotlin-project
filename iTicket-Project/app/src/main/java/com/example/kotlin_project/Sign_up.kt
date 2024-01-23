@@ -119,11 +119,27 @@ class Sign_up : AppCompatActivity() {
         val docRef = db.collection("clients").document(email)
         docRef.get()
             .addOnSuccessListener { docSnap ->
-                val fieldName :String= docSnap.getString("username") ?:""
-                val signUpIntent = Intent(this, Home_page::class.java)
-                signUpIntent.putExtra("fName",fieldName)
-                signUpIntent.putExtra("emailCl",email)
-                startActivity(signUpIntent)
+                val fieldName :String= docSnap.getString("username") ?:"NONE"
+                if(fieldName!="NONE"){
+                    val signUpIntent = Intent(this, Home_page::class.java)
+                    signUpIntent.putExtra("fName",fieldName)
+                    signUpIntent.putExtra("emailCl",email)
+                    startActivity(signUpIntent)
+                }
+                else{
+                    val docRef = db.collection("employees").document(email)
+                    docRef.get()
+                        .addOnSuccessListener { docSnap ->
+                            val fieldName :String= docSnap.getString("username") ?:"NONE"
+                            if(fieldName!="NONE"){
+                                val signUpIntent = Intent(this, Home_page::class.java)
+                                signUpIntent.putExtra("fName",fieldName)
+                                signUpIntent.putExtra("emailCl",email)
+                                startActivity(signUpIntent)
+                            }
+
+                        }
+                }
             }
     }
 
