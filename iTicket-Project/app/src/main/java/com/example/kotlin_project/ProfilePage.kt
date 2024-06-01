@@ -45,7 +45,11 @@ class ProfilePage : AppCompatActivity() {
         binding.userEmail.text = email_str
         binding.userName.text=name_str
         binding.profEmail.text = email_str
-        binding.profPass.text = pass_str
+        var maskedStr = StringBuilder(pass_str.length)
+        for(i in pass_str.indices){
+            maskedStr.append('*');
+        }
+        binding.profPass.text = maskedStr;
         binding.nameTxt.text = name_str
     }
 }

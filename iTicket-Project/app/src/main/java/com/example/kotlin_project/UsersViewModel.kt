@@ -48,7 +48,6 @@ class UsersViewModel(application: Application):AndroidViewModel (application){
         viewModelScope.launch {
             var user = UserRepo.checkUserByEmail(email,password)
             _exist.value = user != null
-
         }
     }
     fun getUsersBytype(type: String){

@@ -84,7 +84,6 @@ class Tickets : AppCompatActivity() {
     }
     ///
     private fun getTicketInfoFromRoom() {
-
         viewModel.selectedTicketsData.observe(this, Observer { ticket ->
             ticket?.let {
                 for(tickets in ticket){
